@@ -1,34 +1,51 @@
-#include <omp.h>
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include<chrono>
 
-int main()
-{
-    int iThreads = 5;
-    int a[100];
+using namespace std;
 
-#pragma omp parallel num_threads(iThreads)
+
+int main() {
+    auto start_time = std::chrono::high_resolution_clock::now();
+    std::ifstream arquivo("sample.csv");
+
+#pragma omp parallel //Criar os Dicionarios baseado nas colunas
     {
-        int iThread = omp_get_thread_num();
+        //nesse caso a diferenca usando open mp foi quase nula, foi tentado fazer um pushback no while e depois um parallel for, mas o tempo de execucao piorou
+        if (arquivo.is_open()) {
+            std::string Line; //string responsavel por armazenar a linha
+            if (std::getline(arquivo, Line)) {
+                std::cout << "A primeira linha do arquivo é: " << Line << std::endl;
+                int num_column = 0; //descobrir a quantidade de coluna
+                std::istringstream StringLine(Line);
+                std::string data; //armazenar os valores separados por virguma
+                while (std::getline(StringLine, data, ',')) { //pegar o valor antes das/entre as virgula e armazenar em data
+                    num_column++; // Conta as colunas
+                    std::ofstream dict;
+                    dict.open("dicts/" + data + ".csv");
+                    if (arquivo.is_open()) {
+                        arquivo.close();
+                    }
+                }
+                std::cout << "Numero de Colunas: " << num_column << std::endl;
+            }
+            else {
+                std::cerr << "O arquivo está vazio." << std::endl;
+            }
 
-        if (iThread == 0) //master
-        {
-            std::cout << "Executando Thread: " << iThread << std::endl;
-            std::cout << omp_get_num_threads() << " threads executando!" << std::endl;
+            arquivo.close();
         }
-        else
-        {
-            std::cout << "Executando Thread: " << iThread << std::endl;
+        else {
+            std::cerr << "Não foi possível abrir o arquivo." << std::endl;
         }
-
-#pragma omp for
-        for (int i = 0; i < 100; i++) a[i] = omp_get_thread_num() * i;
-
-#pragma omp master
-        for (int i = 0; i < 100; i++)
-            std::cout << "a[" << i << "] = " << a[i] << std::endl;
-
     }
 
-    return 0;
+    auto end_time = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
+    std::cout << "Tempo de execução: " << duration << " milissegundos" << std::endl;
 
+    return 0;
 }
