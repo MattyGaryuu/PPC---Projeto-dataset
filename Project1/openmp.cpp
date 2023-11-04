@@ -25,8 +25,8 @@ int main() {
                 std::string data; //armazenar os valores separados por virguma
                 while (std::getline(StringLine, data, ',')) { //pegar o valor antes das/entre as virgula e armazenar em data
                     num_column++; // Conta as colunas
-                    std::ofstream dict;
-                    dict.open("dicts/" + data + ".csv");
+                    std::fstream dict("dicts/" + data + ".csv", std::ios::in | std::ios::out | std::ios::app);
+                    dict << "codigo,descrição" << '\n';
                     if (arquivo.is_open()) {
                         arquivo.close();
                     }
