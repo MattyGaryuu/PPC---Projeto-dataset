@@ -10,7 +10,8 @@ using namespace std;
 
 int main() {
     auto start_time = std::chrono::high_resolution_clock::now();
-    std::ifstream arquivo("sample.csv");
+    //std::ifstream arquivo("sample.csv"); //teste
+    std::ifstream arquivo("testeMaior.csv"); //arquivo
 
 #pragma omp parallel //Criar os Dicionarios baseado nas colunas
     {
