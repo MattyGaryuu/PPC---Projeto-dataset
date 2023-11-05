@@ -5,7 +5,7 @@
 #include <vector>
 #include<chrono>
 
-#define limit 15
+#define limit 1000
 
 std::fstream dataset;
 std::vector<std::string> dictindex;
@@ -14,6 +14,7 @@ std::vector<std::vector<std::string>> m_dataset; //matriz que ira armazenar o da
 int Point = 1; //ponteiro para orientar onde o dataset parou de ler, ja pulando primeira etapa
 std::string Line; //string responsavel por armazenar a linha que atualmente esta sendo lida
 std::fstream dict;
+std::vector<std::string> m_a;
 int Daux;
 
 
@@ -27,7 +28,7 @@ void CreateDictArchive() { //função para a criação dos arquivos de dicionario
                     std::istringstream StringLine(Line);
                     std::string data; //armazenar os valores separados por virguma
                     while (std::getline(StringLine, data, ',')) { //pegar o valor antes das/entre as virgula e armazenar em data
-                        dict.open("dicts/" + data + ".csv", std::ios::in | std::ios::out | std::ios::app);
+                        dict.open("dicts/" + data + ".csv");
                         dict.imbue(std::locale(""));
                         dictindex.push_back("dicts/" + data + ".csv");
                         //dict << "codigo,descrição" << '\n';
@@ -79,53 +80,36 @@ void ReadCsv() {
 }
 
 bool Verify(int value, std::string VD) {
-    dict.open(dictindex[value], std::ios::in);
-    dict.seekg(0, std::ios::beg);
-    if (dict.is_open()) {
-        while (std::getline(dict, Line)) {
-            bool can_verify = false;
-            std::istringstream StringLine(Line);
-            std::string data; //armazenar os valores separados por virguma
-            while (std::getline(StringLine, data, ',')) {
-                if(can_verify){
-                    //std::cout << VD + "nao eh" + data << std::endl;
-                    if (VD == data) {
-                        dict.close();
-                        //std::cout << "maczada";
-                        return false;
-                        break;
-                    }
-                }
-                else {
-                    can_verify = true;
-                }
-            }
+    //#pragma omp parallel for
+    for (int i = 0; i < m_a.size(); i++) {
+        if (m_a[i] == VD) {
+            return false;
         }
     }
-    else {
-        std::cerr << "Erro ao abrir o arquivo "  + dictindex[value] << std::endl;
-    }
-    dict.close();
     return true; // nao esta na lista
 }
 
 void Editdict() {
     for (int i = 0; i < dictindex.size(); i++) {
         Daux = 0;
+        m_a.clear();
+        #pragma omp parallel for
         for (int j = 0; j < m_dataset.size(); j++) {
             
             //[j] [i]
+            //#pragma omp critical
             if (Verify(i, m_dataset[j][i])) {
                 Daux++;
-                dict.open(dictindex[i], std::ios::app);
-                dict << std::to_string(Daux) + "," + m_dataset[j][i] << '\n';
-                std::cout << std::to_string(Daux) +" saf " + m_dataset[j][i] << std::endl;
-                dict.close();
-            }
-            else {
-                std::cout << m_dataset[j][i] + "Ja esta no arquivo" << std::endl;
+                m_a.push_back(m_dataset[j][i]);
+                //std::cout << std::to_string(Daux) +" saf " + m_dataset[j][i] << std::endl;
             }
         }
+        dict.open(dictindex[i], std::ios::app);
+        #pragma omp parallel for
+        for(int j = 0; j < m_a.size(); j++){
+            dict << std::to_string(j+1) + "," + m_a[j] + "\n";
+        }
+        dict.close();
     }
 }
 
