@@ -28,11 +28,11 @@ void CreateDictArchive() { //função para a criação dos arquivos de dicionario
                     std::istringstream StringLine(Line);
                     std::string data; //armazenar os valores separados por virguma
                     while (std::getline(StringLine, data, ',')) { //pegar o valor antes das/entre as virgula e armazenar em data
-                        dict.open("dicts/" + data + ".csv");
-                        dict.imbue(std::locale(""));
+                        //dict.open("dicts/" + data + ".csv");
+                        //dict.imbue(std::locale(""));
                         dictindex.push_back("dicts/" + data + ".csv");
                         //dict << "codigo,descrição" << '\n';
-                        dict.close();
+                        //dict.close();
                     }
                     std::cout << "Numero de Colunas: " << dictindex.size() << std::endl;
                 }
