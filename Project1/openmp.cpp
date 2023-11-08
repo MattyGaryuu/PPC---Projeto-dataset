@@ -6,10 +6,11 @@
 #include <map>
 #include<chrono>
 
-#define limit 100
+#define limit 50
 
 std::fstream dataset;
 std::vector<std::string> dictindex;
+std::vector<std::string> dictorigin;
 std::vector<std::vector<std::string>> m_dataset; //matriz que ira armazenar o dataset
 int Point = 1; //ponteiro para orientar onde o dataset parou de ler, ja pulando primeira etapa
 std::string Line; //string responsavel por armazenar a linha que atualmente esta sendo lida
@@ -46,6 +47,7 @@ void CreateDictArchive() { //função para a criação dos arquivos de dicionario
                         else {
                             dictindex.push_back("b"); //sinalizador de black list, importante colocar no vetor para que a ordem natural dos outros dados nao fujam do controle
                         }
+                        dictorigin.push_back(data);
                     }
                 }
                 else {
@@ -175,9 +177,11 @@ void ReplaceById() {
 
 void WriteCsv() {
     dataset.open("dataset_00_sem_virg_final.csv", std::ios::out | std::ios::trunc);
-    for (int i = 0; i < dictindex.size(); i++) {
-        dataset << dictindex[i] + '\n';
+    dataset << dictorigin[0];
+    for (int i = 0; i < dictorigin.size(); i++) {
+        dataset << "," + dictorigin[i];
     }
+    dataset << '\n';
     //#pragma omp parallel for
     for (int i = 0; i < m_dataset.size(); i++) {
         Line = m_dataset[i][0];
@@ -203,8 +207,8 @@ void imprimir() { //apagar na versao final
 
 int main() {
     auto start_time = std::chrono::high_resolution_clock::now();
-    dataset.open("dataset_00_sem_virg.csv", std::ios::in | std::ios::out | std::ios::app); //arquivo
-    //dataset.open("testeMaior.csv", std::ios::in | std::ios::out | std::ios::app); //arquivo
+    //dataset.open("dataset_00_sem_virg.csv", std::ios::in | std::ios::out | std::ios::app); //arquivo
+    dataset.open("testeMaior.csv", std::ios::in | std::ios::out | std::ios::app); //arquivo
     dataset.imbue(std::locale(""));
 
     CreateDictArchive();
