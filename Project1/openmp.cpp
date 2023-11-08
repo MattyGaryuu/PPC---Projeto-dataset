@@ -3,24 +3,25 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <map>
 #include<chrono>
 
-#define limit 1000
+#define limit 10000
 
 std::fstream dataset;
 std::vector<std::string> dictindex;
 std::vector<std::vector<std::string>> m_dataset; //matriz que ira armazenar o dataset
-//aplicar hash aqui para quando cubstituir a tabela
 int Point = 1; //ponteiro para orientar onde o dataset parou de ler, ja pulando primeira etapa
 std::string Line; //string responsavel por armazenar a linha que atualmente esta sendo lida
 std::fstream dict;
 std::vector<std::string> m_a;
+
 int Daux;
 
+std::vector<std::string> blacklist = { "idatracacao", "idcarga", "nacionalidadearmador", "pesocarga_cntr", "pesocargabruta", "qtcarga", "tatracado", "tesperaatracacao", "tesperacainicioop",
+"tesperadesatracacao", "testadia", "toperacao" }; //os seguintes nomes sao colunas de valores ja numericos, nao precisando de um tratamento de id para tais
 
 void CreateDictArchive() { //função para a criação dos arquivos de dicionario
-    #pragma omp parallel //Criar os Dicionarios baseado nas colunas
-        {
             //nesse caso a diferenca usando open mp foi qnula, dado que leitura e escrita de dados geralmente nao faz muita diferenca ser paralelo
             if (dataset.is_open()) {
                 if (std::getline(dataset, Line)) {
@@ -28,7 +29,23 @@ void CreateDictArchive() { //função para a criação dos arquivos de dicionario
                     std::istringstream StringLine(Line);
                     std::string data; //armazenar os valores separados por virguma
                     while (std::getline(StringLine, data, ',')) { //pegar o valor antes das/entre as virgula e armazenar em data
-                        dictindex.push_back("dicts/" + data + ".csv");
+                        //tratar black list
+                        bool aux = true;
+                        #pragma omp parallel for
+                        for (int i = 0; i < blacklist.size(); i++)
+                        {
+                            if (data == blacklist[i]) {
+                                #pragma omp critical
+                                aux = false;
+                            }
+
+                        }
+                        if(aux){
+                            dictindex.push_back("dicts/" + data + ".csv");
+                        }
+                        else {
+                            dictindex.push_back("b"); //sinalizador de black list, importante colocar no vetor para que a ordem natural dos outros dados nao fujam do controle
+                        }
                     }
                 }
                 else {
@@ -38,21 +55,16 @@ void CreateDictArchive() { //função para a criação dos arquivos de dicionario
             else {
                 std::cerr << "Não foi possível abrir o arquivo." << std::endl;
             }
-        }
 }
 
 void ReadCsv() {
     //dataset.open("testeMaior.csv", std::ios::in | std::ios::out | std::ios::app);
-    #pragma omp parallel
-    {
-        #pragma omp for schedule(dynamic)
         int p_aux = Point;
         for (int i = p_aux; i < (p_aux + limit); i++) {
             if(std::getline(dataset, Line)){
 
                 //separar linha unica em varios componentes para a matriz
-                #pragma omp critical
-                {
+
                     std::istringstream StringLine(Line);
                     std::string aux;
                     std::vector<std::string> V_aux;
@@ -63,14 +75,12 @@ void ReadCsv() {
                     //std::cout << std::endl;
                     m_dataset.push_back(V_aux);
                     Point++;
-                }
             }
             else {
                 std::cerr << "O arquivo está vazio." << std::endl;
-                break;
+                //break;
             }
         }
-    }
 
 }
 
@@ -84,6 +94,8 @@ bool Verify(int value, std::string VD) {
     return true; // nao esta na lista
 }
 
+
+
 void Editdict() {
     //Afim de poder aplicar uma paralelização no código, o grupo decidiu por fazer uma função que usa-se de um vetor temporario para o armazenamento de dados de cada coluna, verificando
     // se ele não aparece no arquivo, se por acaso não aparecer um novo valor sera armazenado no vetor m_a. Ao final da função será armazenado num arquivo .csv todos os ids.
@@ -91,51 +103,116 @@ void Editdict() {
     //O Grupo tentou também fazer uma função acessando o arquivo ao ines de um vetor auxiliar mas, como já dito, era inviavel dado que leitura e escrita geralmente é feito de maneira
     //sequencial e essa leitura e escrita afetariam muito o desempenho do programa.
 
+//#pragma omp parallel for collapse(2) //erro kkkk
     for (int i = 0; i < dictindex.size(); i++) { //para cada coluna
-        m_a.clear();
-        //Após 10 testes com o dataset de 1000 usando um i3 2100 foi percebido que a maneira mais otimizada seria as threads trabalharem a mesma coluna do que mexer simultaneamente em
-        // todas (evitando também uma condição de corrida) media trabalhando cada coluna paralelamente:1431 ms. nedia threads trabalhando na mesma coluna = media:1175. collapse piorou a perfomance
-        #pragma omp parallel for  
-        for (int j = 0; j < m_dataset.size(); j++) { //para cada linha do dataset
-            
-            //[j] [i]
-            if (Verify(i, m_dataset[j][i])) { //verificar se não aparece
-                m_a.push_back(m_dataset[j][i]);
+        if(dictindex[i].size() > 1) //se tiver apenas 1 ou 0 = ignorar
+        {
+            m_a.clear();
+            //Após 10 testes com o dataset de 1000 usando um i3 12100f foi percebido que a maneira mais otimizada seria as threads trabalharem a mesma coluna do que mexer simultaneamente em
+            // todas (alem de dar crash no programa ao tentar) em um teste trabalhando so 50000 linhas a diferença foi de -32% de perfomance. Usando threads para escrever aumentava o tempo em 8%.
+            //com threads (media de 5 testes) = 27843 ms
+            //sem threads (media de 5 testes) = 40005 ms
+            // (Black_list e substituicao de id nao implementada na hora para testar ao maximo, com black list nao passava de 5 segundos, por isso feito para testar ao maximo)
+
+#pragma omp parallel for
+            for (int j = 0; j < m_dataset.size(); j++) { //para cada linha do dataset         
+                //[j] [i]    
+#pragma omp critical
+                {
+                    if (Verify(i, m_dataset[j][i])) { //verificar se não aparece
+                        m_a.push_back(m_dataset[j][i]);
+                    }
+                }
             }
+            //Após analisado todas linhas, armazenar num arquivo
+            dict.open(dictindex[i], std::ios::out | std::ios::trunc); //excluir conteudo se ja existir
+            for (int j = 0; j < m_a.size(); j++) {
+                dict << std::to_string(j + 1) + "," + m_a[j] + "\n"; //sera salvo no arquivo de modo que (index da matriz + 1),(Descrição)
+            }
+            dict.close();
         }
-        //Após analisado todas linhas, armazenar num arquivo
-        dict.open(dictindex[i], std::ios::app);
-        #pragma omp parallel for
-        for(int j = 0; j < m_a.size(); j++){
-            dict << std::to_string(j+1) + "," + m_a[j] + "\n"; //sera salvo no arquivo de modo que (index da matriz + 1),(Descrição)
-        }
-        dict.close();
+        
     }
 }
 
+void ReplaceById() {
+    //substituir por colunas
+    for (int i = 0; i < dictindex.size(); i++) {
+        if (dictindex[i].size() > 1)
+        {
+            //abrir arquivo de id
+            std::map<std::string, std::string> ids; //mapa para procura de id
+            dict.open(dictindex[i], std::ios::in);
 
+            if (dict.is_open()) {
+                while (std::getline(dict, Line)) {
+                    std::istringstream stringstream(Line);
+                    std::string key, value;
+
+                    if (std::getline(stringstream, key, ',')) {
+                        if (std::getline(stringstream, value, ',')) {
+                            ids[key] = value;
+                        }
+                    }
+                }
+            }
+
+            dict.close();
+
+            //#pragma omp parallel for collapse(2)
+            for (int j = 0; j < m_dataset.size(); j++) {
+                for (const auto& pair : ids) {
+                    if (pair.second == m_dataset[j][i]) {
+                        m_dataset[j][i] = pair.first;
+                        //std::cout << "Valor " << pair.second << " encontrado associado a chave '" << pair.first << "'" << std::endl;
+                        // Ou faça o que for necessário com o valor encontrado.
+                    }
+                }
+            }
+        }
+    }
+}
+
+void WriteCsv() {
+    dataset.open("dataset_00_sem_virg_final.csv", std::ios::out | std::ios::trunc);
+    //#pragma omp parallel for
+    for (int i = 0; i < m_dataset.size(); i++) {
+        Line = m_dataset[i][0];
+        for (int j = 1; j < m_dataset[i].size(); j++) {
+            Line += "," + m_dataset[i][j];
+        }
+        //#pragma omp critical
+        dataset << Line + '\n';
+    }
+    dataset.close();
+}
 
 void imprimir() { //apagar na versao final
+    #pragma omp parallel for
     for (int i = 0; i < m_dataset.size(); i++) {
         for(int j = 0; j < m_dataset[i].size(); j++){
             std::cout << m_dataset[i][j];
         }
-        std::cout << Point << std::endl;
+        #pragma omp critical
+        std::cout << Point << std::endl << std::endl;
     }
 }
 
 int main() {
     auto start_time = std::chrono::high_resolution_clock::now();
-    //std::ifstream arquivo("sample.csv"); //teste
-    dataset.open("testeMaior.csv", std::ios::in | std::ios::out | std::ios::app); //arquivo
+    dataset.open("dataset_00_sem_virg.csv", std::ios::in | std::ios::out | std::ios::app); //arquivo
+    //dataset.open("testeMaior.csv", std::ios::in | std::ios::out | std::ios::app); //arquivo
     dataset.imbue(std::locale(""));
 
     CreateDictArchive();
     ReadCsv();
+    dataset.close();
     Editdict();
+    ReplaceById();
+    WriteCsv();
     //imprimir(); //testar
 
-    dataset.close();
+
 
     auto end_time = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
