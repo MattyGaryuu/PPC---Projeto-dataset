@@ -178,7 +178,7 @@ void ReplaceById() {
 void WriteCsv() {
     dataset.open("dataset_00_sem_virg_final.csv", std::ios::out | std::ios::trunc);
     dataset << dictorigin[0];
-    for (int i = 0; i < dictorigin.size(); i++) {
+    for (int i = 1; i < dictorigin.size(); i++) {
         dataset << "," + dictorigin[i];
     }
     dataset << '\n';
