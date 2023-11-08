@@ -6,7 +6,7 @@
 #include <map>
 #include<chrono>
 
-#define limit 10000
+#define limit 100
 
 std::fstream dataset;
 std::vector<std::string> dictindex;
@@ -175,6 +175,9 @@ void ReplaceById() {
 
 void WriteCsv() {
     dataset.open("dataset_00_sem_virg_final.csv", std::ios::out | std::ios::trunc);
+    for (int i = 0; i < dictindex.size(); i++) {
+        dataset << dictindex[i] + '\n';
+    }
     //#pragma omp parallel for
     for (int i = 0; i < m_dataset.size(); i++) {
         Line = m_dataset[i][0];
