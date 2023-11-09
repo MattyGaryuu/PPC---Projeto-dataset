@@ -6,8 +6,9 @@
 #include <map>
 #include<chrono>
 #include <algorithm>
+#include<omp.h>
 
-#define limit 300000//00//000
+#define limit 1000000//00//000
 
 std::fstream dataset;
 std::vector<std::string> dictindex;
@@ -21,7 +22,7 @@ std::vector<std::string> m_a;
 int Daux;
 
 std::vector<std::string> blacklist = { "idatracacao", "idcarga", "nacionalidadearmador", "pesocarga_cntr", "pesocargabruta", "qtcarga", "tatracado", "tesperaatracacao", "tesperacainicioop",
-"tesperadesatracacao", "testadia", "toperacao" }; //os seguintes nomes sao colunas de valores ja numericos, nao precisando de um tratamento de id para tais
+"tesperadesatracacao", "testadia", "toperacao", "ano"}; //os seguintes nomes sao colunas de valores ja numericos, nao precisando de um tratamento de id para tais
 
 void CreateDictArchive() { //função para a criação dos arquivos de dicionario
             //nesse caso a diferenca usando open mp foi qnula, dado que leitura e escrita de dados geralmente nao faz muita diferenca ser paralelo
@@ -44,6 +45,8 @@ void CreateDictArchive() { //função para a criação dos arquivos de dicionario
                         }
                         if(aux){
                             dictindex.push_back("dicts/" + data + ".csv");
+                            dict.open("dicts/" + data + ".csv", std::ios::out | std::ios::trunc); //excluir conteudo se ja existir
+                            dict.close();
                         }
                         else {
                             dictindex.push_back("b"); //sinalizador de black list, importante colocar no vetor para que a ordem natural dos outros dados nao fujam do controle
@@ -195,24 +198,37 @@ void WriteCsv() {
 
 void teste() {
     for (int i = 0; i < dictindex.size(); i++) {
+
         if (dictindex[i].size() > 1)
         {
             //abrir arquivo de id
             std::map<std::string, int> ids; //mapa para procura de id
 
-            #pragma omp parallel for
+
+            dict.open(dictindex[i], std::ios::in | std::ios::out | std::ios::app);
+            while (std::getline(dict, Line)) {
+                std::istringstream StringLine(Line);
+                std::string value, key;
+                while (std::getline(StringLine, value, ',')) {
+                    std::getline(StringLine, key, ',');
+                    ids[key] = std::stoi(value);
+                }
+            }
+            dict.close();
+
+            #pragma omp parallel for shared(m_dataset, ids)
             for (int j = 0; j < m_dataset.size(); j++) {
-                #pragma omp critical
-                {
                     auto aux = ids.find(m_dataset[j][i]);
                     if (aux != ids.end()) {
                         m_dataset[j][i] = std::to_string(aux->second);
                     }
                     else {
-                        ids[m_dataset[j][i]] = ids.size() + 1;
-                        m_dataset[j][i] = std::to_string(ids.size());
+                        #pragma omp critical
+                        {
+                            ids[m_dataset[j][i]] = ids.size() + 1;
+                            m_dataset[j][i] = std::to_string(ids.size());
+                        }
                     }
-                }
             }
 
             // Copy it into a vector.
@@ -239,22 +255,22 @@ void readCircle() {
     bool can_loop = true;
     while (!dataset.eof() && can_loop|| limit > sum && can_loop) {
         for (int i = 0; i < aux; i++) {
-            if (std::getline(dataset, Line) && limit > sum) {
-                //separar linha unica em varios componentes para a matriz
-                std::istringstream StringLine(Line);
-                std::string aux;
-                std::vector<std::string> V_aux;
-                while (std::getline(StringLine, aux, ',')) {
-                    V_aux.push_back(aux);
+                if (std::getline(dataset, Line) && limit > sum) {
+                    //separar linha unica em varios componentes para a matriz
+                    std::istringstream StringLine(Line);
+                    std::string aux;
+                    std::vector<std::string> V_aux;
+                    while (std::getline(StringLine, aux, ',')) {
+                        V_aux.push_back(aux);
+                    }
+                    m_dataset.push_back(V_aux);
+                    Point++;
                 }
-                m_dataset.push_back(V_aux);
-                Point++;
-            }
-            else {
-                //std::cerr << "fim do arquivo." << std::endl;
-                can_loop = false;
-            }
-            sum++;
+                else {
+                    //std::cerr << "fim do arquivo." << std::endl;
+                    can_loop = false;
+                }
+                sum++;
         }
         teste();
         WriteCsv();
@@ -272,15 +288,9 @@ int main() {
     dataset.imbue(std::locale(""));
 
     CreateDictArchive();
-    //ReadCsv();
     readCircle();
-    //Editdict();
-    //m_a.clear();
-    //ReplaceById();
-    //teste();
     dataset.close();
     WriteCsv();
-    //imprimir(); //testar
     
 
 
