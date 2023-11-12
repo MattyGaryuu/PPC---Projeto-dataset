@@ -130,10 +130,10 @@ void readCircle() {
     int sum = 1;
     int aux = static_cast<int>((limit * 0.10));
     bool can_loop = true;
-    while (!dataset.eof() && can_loop || (limit + 1) >= sum && can_loop) {
+    while (!dataset.eof() && can_loop || limit >= sum && can_loop) {
         m_dataset.clear();
         for (int i = 0; i < aux; i++) {
-            if (std::getline(dataset, Line) && (limit + 1) >= sum) {
+            if (std::getline(dataset, Line) && limit >= sum) {
                     //separar linha unica em varios componentes para a matriz
                     std::istringstream StringLine(Line);
                     std::string aux;
@@ -160,7 +160,7 @@ int main() {
     dataset.open("dataset_00_sem_virg.csv", std::ios::in | std::ios::out | std::ios::app); //arquivo
 
     CreateDictArchive();
-    dataset << '\n';
+    wdataset << '\n';
     readCircle();
     dataset.close();
     wdataset.close();

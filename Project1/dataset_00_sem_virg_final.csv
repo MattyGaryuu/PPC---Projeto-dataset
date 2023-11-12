@@ -1,4 +1,5 @@
-idatracacao,cdtup,berco,portoatracacao,ano,mes,tipooperacao,tiponavegacaoatracacao,terminal,nacionalidadearmador,tesperaatracacao,tesperacainicioop,toperacao,tesperadesatracacao,tatracado,testadia,idcarga,origem,destino,cdmercadoria,naturezacarga,qtcarga,pesocargabruta,sentido,cdmercadoria_cntr,pesocarga_cntr88883,1,1,1,2016,1,1,1,1,0,0,0,20,0,20,20,17880751,1,1,1,1,0,2000,1,1,0
+idatracacao,cdtup,berco,portoatracacao,ano,mes,tipooperacao,tiponavegacaoatracacao,terminal,nacionalidadearmador,tesperaatracacao,tesperacainicioop,toperacao,tesperadesatracacao,tatracado,testadia,idcarga,origem,destino,cdmercadoria,naturezacarga,qtcarga,pesocargabruta,sentido,cdmercadoria_cntr,pesocarga_cntr
+788883,1,1,1,2016,1,1,1,1,0,0,0,20,0,20,20,17880751,1,1,1,1,0,2000,1,1,0
 751889,2,2,2,2016,2,2,2,2,2,0,2,30,2,34,34,16157250,2,2,1,1,0,6213,1,1,0
 751889,2,2,2,2016,2,2,2,2,2,0,2,30,2,34,34,16157251,3,2,2,1,0,109,2,1,0
 797313,3,3,3,2016,3,2,2,3,1,29,1,11,8,21,50,17416470,4,3,3,1,0,12329,2,1,0
@@ -48,4 +49,3 @@ idatracacao,cdtup,berco,portoatracacao,ano,mes,tipooperacao,tiponavegacaoatracac
 805721,10,14,10,2016,5,2,2,12,2,3,1,17,1,20,24,17710028,16,5,3,1,0,17636,2,1,0
 834485,11,15,11,2016,9,2,2,13,2,9,3,21,5,31,40,18772879,12,7,1,1,0,14137,2,1,0
 762331,12,16,12,2016,9,2,2,14,2,31,4,37,7,49,81,16379234,2,10,1,1,0,19712,1,1,0
-762331,12,16,12,2016,9,2,2,14,2,31,4,37,7,49,81,16379235,14,7,1,1,0,9026,2,1,0
