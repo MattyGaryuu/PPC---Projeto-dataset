@@ -18,10 +18,12 @@
 std::fstream dataset;
 std::fstream wdataset;
 std::vector<std::string> dictindex;
-std::vector<std::vector<std::string>> m_dataset; //matriz que ira armazenar o dataset
+std::vector<std::vector<std::string>> m_dataset; //matriz que ira armazenar a parte do dataset que devera ser modificado
+char h_dataset[limit][12][string_size]; //matriz que ira armazenar a parte do dataset que devera ser modificado
 std::string Line; //string responsavel por armazenar a linha que atualmente esta sendo lida
 std::fstream dict;
 int number = 0;
+std::map<int, int> Orietation; //guardar as colunas exatas de onde o dataset sera tratado, para ajudar na escrita final
 
 char h_ids[limit][12][string_size];
 
@@ -42,13 +44,14 @@ bool in_blackList(std::string value) {
 void CreateDictArchive() {
     if (dataset.is_open()) {
         if (std::getline(dataset, Line)) {
-            
+            int i = 0;
             wdataset << Line << std::endl; //escrever cabecalho no arquivo
             std::istringstream StringLine(Line);
             std::string data; //armazenar os valores separados por virguma
             while (std::getline(StringLine, data, ',')) { //pegar o valor antes das/entre as virgula e armazenar em data
                 if (!in_blackList(data)) {
                     dictindex.push_back("dicts/" + data + ".csv");
+                    Orietation[i] = 0;
                     number++;
                     dict.open("dicts/" + data + ".csv", std::ios::out | std::ios::trunc); //excluir conteudo se ja existir
                     dict.close();
@@ -57,19 +60,40 @@ void CreateDictArchive() {
                 {
                     dictindex.push_back("b");
                 }
+                i++;
             }
         }
     }
 }
 
-void WriteCsv(int sum) {
+//void WriteCsv(int sum) {
+//
+//    for (int i = 0; i < m_dataset.size(); i++) {
+//        Line = m_dataset[i][0];
+//        for (int j = 1; j < m_dataset[i].size(); j++) {
+//            Line += "," + m_dataset[i][j];
+//        }
+//        wdataset << Line + '\n';
+//    }
+//
+//}
 
+void WriteCsv(int sum) {
+    printf("alo %s", h_dataset[0][0]);
     for (int i = 0; i < m_dataset.size(); i++) {
-        Line = m_dataset[i][0];
-        for (int j = 1; j < m_dataset[i].size(); j++) {
-            Line += "," + m_dataset[i][j];
+        wdataset << m_dataset[i][0];
+        int index = 1, indext = 0;
+        for (int j = 1; j < columns; j++) {
+            if (Orietation.find(j) == Orietation.end()) {
+                wdataset << "," + m_dataset[i][index];
+                index++;
+            }
+            else {
+                wdataset << "," + std::string(h_dataset[i][indext]);
+                indext++;
+            }
         }
-        wdataset << Line + '\n';
+        wdataset << '\n';
     }
 
 }
@@ -107,15 +131,27 @@ void readCircle() {
     while (!dataset.eof() && can_loop || limit >= sum && can_loop) {
         m_dataset.clear();
         for (int i = 0; i < aux; i++) {
+            int col = 0; //coluna referencia para o dataset host
+            int acol = 0; //coluna atual
             if (std::getline(dataset, Line) && limit >= sum) {
                 //separar linha unica em varios componentes para a matriz
                 std::istringstream StringLine(Line);
                 std::string z_aux;
                 std::vector<std::string> V_aux;
                 while (std::getline(StringLine, z_aux, ',')) {
-                    V_aux.push_back(z_aux);
+                    if (Orietation.find(acol) == Orietation.end()) {
+                        V_aux.push_back(z_aux);
+                    }
+                    else {
+                        printf("s");
+                        strcpy(h_dataset[i][col], z_aux.c_str());
+                        col++;
+                    }
+                    acol++;
+                    
                 }
                 m_dataset.push_back(V_aux);
+                
                 //strcy(h_dataset[sum][i])
 
             }
@@ -125,25 +161,25 @@ void readCircle() {
             sum++;
         }
         
-        int indexc = -1;
-        for (int i = 0; i < dictindex.size(); i++) {
-            if (dictindex[i].size() > 1) {
-                indexc++;
-                int length = Id(indexc);
+        //int indexc = -1;
+        //for (int i = 0; i < dictindex.size(); i++) {
+        //    if (dictindex[i].size() > 1) {
+        //        indexc++;
+        //        int length = Id(indexc);
 
-                std::ofstream dict_out(dictindex[i], std::ios::out | std::ios::trunc); // Excluir conteúdo se já existir
-                if(dict_out.is_open())
-                {
-                    dict_out << "Id, Descrição\n";
-                    for (int j = 0; j < length; j++) {
-                        //std::cout << h_ids[j][i] << " ";
-                        if(strlen(h_ids[j][i]) > 0) dict_out << std::to_string(j + 1) + "," + h_ids[j][i] + "\n";
-                    }
-                    dict_out.close();
-                }
-                //printf("%d ",length);
-            }
-        }
+        //        std::ofstream dict_out(dictindex[i], std::ios::out | std::ios::trunc); // Excluir conteúdo se já existir
+        //        if(dict_out.is_open())
+        //        {
+        //            dict_out << "Id, Descrição\n";
+        //            for (int j = 0; j < length; j++) {
+        //                //std::cout << h_ids[j][i] << " ";
+        //                if(strlen(h_ids[j][i]) > 0) dict_out << std::to_string(j + 1) + "," + h_ids[j][i] + "\n";
+        //            }
+        //            dict_out.close();
+        //        }
+        //        //printf("%d ",length);
+        //    }
+        //}
 
         //datasetManipulation();
         WriteCsv(sum);
