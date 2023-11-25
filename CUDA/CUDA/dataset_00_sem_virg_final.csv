@@ -1,2 +1,152 @@
 idatracacao,cdtup,berco,portoatracacao,ano,mes,tipooperacao,tiponavegacaoatracacao,terminal,nacionalidadearmador,tesperaatracacao,tesperacainicioop,toperacao,tesperadesatracacao,tatracado,testadia,idcarga,origem,destino,cdmercadoria,naturezacarga,qtcarga,pesocargabruta,sentido,cdmercadoria_cntr,pesocarga_cntr
-
+788883,BRCDO,101,Cabedelo,2016,ago,Marinha,"Apoio Portuário","Cais Público",0,0,0,20,0,20,20,17880751,BRIQI,BRCDO,2710,"Granel Líquido e Gasoso",0,2000,Desembarcados,"",0
+751889,BRBEL,BELM201,"Belém",2016,mar,"Movimentação da Carga",Cabotagem,"Terminal de Miramar",2,0,2,30,2,34,34,16157250,BRSSA,BRBEL,2710,"Granel Líquido e Gasoso",0,6213,Desembarcados,"",0
+751889,BRBEL,BELM201,"Belém",2016,mar,"Movimentação da Carga",Cabotagem,"Terminal de Miramar",2,0,2,30,2,34,34,16157251,BRBEL,BRBEL,CA01,"Granel Líquido e Gasoso",0,109,Embarcados,"",0
+797313,BRSE002,"Quadro de Bóias","Terminal Aquaviário de Aracaju",2016,out,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Aracaju",1,29,1,11,8,21,50,17416470,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,12329,Embarcados,"",0
+794159,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,set,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,1,2,55,2,60,61,17344434,BRFOR,BRAM011,2709,"Granel Líquido e Gasoso",0,13449,Desembarcados,"",0
+794159,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,set,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,1,2,55,2,60,61,17344435,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,17187,Desembarcados,"",0
+794200,BRSE002,"Quadro de Bóias","Terminal Aquaviário de Aracaju",2016,set,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Aracaju",1,16,2,15,3,21,37,17344478,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,17307,Embarcados,"",0
+761217,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,mar,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,38,2,19,2,24,63,16367646,BRBA003,BRAM011,2710,"Granel Líquido e Gasoso",0,6468,Desembarcados,"",0
+794196,BRSE002,"Quadro de Bóias","Terminal Aquaviário de Aracaju",2016,set,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Aracaju",1,7,4,16,2,23,30,17344471,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,17229,Embarcados,"",0
+800553,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,out,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,1,4,44,2,50,52,17551294,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,7939,Desembarcados,"",0
+800553,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,out,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,1,4,44,2,50,52,17551295,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,13255,Desembarcados,"",0
+800553,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,out,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,1,4,44,2,50,52,17551296,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,4338,Desembarcados,"",0
+800553,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,out,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,1,4,44,2,50,52,17551297,BRFOR,BRAM011,2709,"Granel Líquido e Gasoso",0,335,Desembarcados,"",0
+784016,BRBEL,BELM201,"Belém",2016,ago,"Movimentação da Carga",Cabotagem,"Terminal de Miramar",2,0,1,24,8,34,34,17013657,BRMAO,BRBEL,2710,"Granel Líquido e Gasoso",0,4046,Desembarcados,"",0
+784016,BRBEL,BELM201,"Belém",2016,ago,"Movimentação da Carga",Cabotagem,"Terminal de Miramar",2,0,1,24,8,34,34,17013658,BRBEL,BRBEL,CA01,"Granel Líquido e Gasoso",0,631,Embarcados,"",0
+784016,BRBEL,BELM201,"Belém",2016,ago,"Movimentação da Carga",Cabotagem,"Terminal de Miramar",2,0,1,24,8,34,34,17013659,BRBEL,BRBEL,CA01,"Carga Geral",0,2,Embarcados,"",0
+802142,BRES008,"Monobóia","Terminal Aquaviário do Norte Capixaba",2016,dez,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário do Norte Capixaba",2,2,4,17,4,25,28,17575382,BRES008,BRSUA,2709,"Granel Líquido e Gasoso",0,17199,Embarcados,"",0
+811514,BRBA003,PP-4,"Terminal Aquaviário de Madre de Deus",2016,dez,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Madre de Deus",1,10,3,23,4,31,41,17876887,BRNAT,BRBA003,2709,"Granel Líquido e Gasoso",0,17489,Desembarcados,"",0
+811514,BRBA003,PP-4,"Terminal Aquaviário de Madre de Deus",2016,dez,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Madre de Deus",1,10,3,23,4,31,41,17876888,BRNAT,BRBA003,2709,"Granel Líquido e Gasoso",0,5764,Desembarcados,"",0
+801565,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,out,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,1,2,33,2,39,40,17562031,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,11234,Desembarcados,"",0
+801565,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,out,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,1,2,33,2,39,40,17562032,BRFOR,BRAM011,2709,"Granel Líquido e Gasoso",0,6701,Desembarcados,"",0
+788167,BRSE002,"Quadro de Bóias","Terminal Aquaviário de Aracaju",2016,ago,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Aracaju",1,18,2,14,3,19,38,17126683,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,15739,Embarcados,"",0
+783102,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,jul,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,1,4,44,1,49,50,17001291,BRSE002,BRAM011,2710,"Granel Líquido e Gasoso",0,25367,Desembarcados,"",0
+808723,BRSUA,"Pier de Granéis Líquidos 3 - A",Suape,2016,dez,"Movimentação da Carga",Cabotagem,"Píer de Graneis Líquidos 3A",1,60,4,32,5,42,103,17797891,BRES008,BRSUA,2709,"Granel Líquido e Gasoso",0,34511,Desembarcados,"",0
+754727,BRSUA,"Pier de Granéis Líquidos 2 - Berço Oeste",Suape,2016,fev,"Movimentação da Carga",Cabotagem,"Píer de Graneis Líquidos 2",1,0,9,26,4,40,40,16201621,BRSUA,BRARB,2710,"Granel Líquido e Gasoso",0,16843,Embarcados,"",0
+754708,BRSUA,"Cais de Múltiplos Usos - Berço - Leste",Suape,2016,fev,"Movimentação da Carga",Cabotagem,"Cais de Múltiplos Usos - CMU",1,204,0,168,0,0,0,16201330,BRSSA,BRSUA,2710,"Granel Líquido e Gasoso",0,25104,Desembarcados,"",0
+775454,BRSUA,"Cais de Múltiplos Usos - Berço - Leste",Suape,2016,jun,"Movimentação da Carga",Cabotagem,"Cais de Múltiplos Usos - CMU",1,1,7,0,16,0,328,16773598,BRARB,BRSUA,2710,"Granel Líquido e Gasoso",0,26840,Desembarcados,"",0
+812660,BRVDC,501,"Vila do Conde",2016,abr,"Movimentação da Carga",Cabotagem,"Terminal de Granel Líquido",2,0,4,52,14,70,70,17896605,BRSSZ,BRVDC,2710,"Granel Líquido e Gasoso",0,25945,Desembarcados,"",0
+812660,BRVDC,501,"Vila do Conde",2016,abr,"Movimentação da Carga",Cabotagem,"Terminal de Granel Líquido",2,0,4,52,14,70,70,17896606,BRVDC,BRVDC,CA01,"Carga Geral",0,0,Desembarcados,"",0
+747662,BRBA003,PP-2,"Terminal Aquaviário de Madre de Deus",2016,fev,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Madre de Deus",1,65,5,13,0,82,147,16036817,BRSUA,BRBA003,2710,"Granel Líquido e Gasoso",0,16891,Desembarcados,"",0
+764881,BRPNG,"Berço 142","Paranaguá",2016,abr,"Movimentação da Carga",Cabotagem,"PIER DA PETROBRAS",2,20,4,19,2,26,46,16504827,BRRIG,BRPNG,2710,"Granel Líquido e Gasoso",0,5448,Desembarcados,"",0
+764881,BRPNG,"Berço 142","Paranaguá",2016,abr,"Movimentação da Carga",Cabotagem,"PIER DA PETROBRAS",2,20,4,19,2,26,46,16504828,BRPNG,BRVDC,2710,"Granel Líquido e Gasoso",0,5550,Embarcados,"",0
+775033,BRBA003,PP-1,"Terminal Aquaviário de Madre de Deus",2016,jun,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Madre de Deus",1,126,3,27,3,34,160,16725905,BRBA003,BRSUA,2710,"Granel Líquido e Gasoso",0,31629,Embarcados,"",0
+735424,BRBEL,BELM201,"Belém",2016,jan,"Movimentação da Carga",Cabotagem,"Terminal de Miramar",2,0,4,24,5,34,34,15693612,BRSSA,BRBEL,2710,"Granel Líquido e Gasoso",0,7116,Desembarcados,"",0
+806163,BRRN001,GUAM-QB,"Terminal Aquaviário de Guamaré",2016,dez,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Guamaré",2,12,1,64,3,69,82,17713196,BRRN001,BRSUA,2709,"Granel Líquido e Gasoso",0,17061,Embarcados,"",0
+806163,BRRN001,GUAM-QB,"Terminal Aquaviário de Guamaré",2016,dez,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Guamaré",2,12,1,64,3,69,82,17713197,BRSE002,BRRN001,2710,"Granel Líquido e Gasoso",0,10625,Desembarcados,"",0
+770271,BRVDC,501,"Vila do Conde",2016,jun,"Movimentação da Carga",Cabotagem,"Terminal de Granel Líquido",2,0,1,56,5,63,63,16656999,BRSSZ,BRVDC,2710,"Granel Líquido e Gasoso",0,30619,Desembarcados,"",0
+779943,BRSE002,"Quadro de Bóias","Terminal Aquaviário de Aracaju",2016,jul,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Aracaju",1,23,1,19,3,24,47,16900534,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,25401,Embarcados,"",0
+809311,BRSE002,"Quadro de Bóias","Terminal Aquaviário de Aracaju",2016,dez,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Aracaju",1,6,2,10,6,19,25,17806650,BRSE002,BRSUA,2709,"Granel Líquido e Gasoso",0,14038,Embarcados,"",0
+789418,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,ago,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,0,4,45,4,55,56,17180643,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,13348,Desembarcados,"",0
+789418,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,ago,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,0,4,45,4,55,56,17180644,BRFOR,BRAM011,2709,"Granel Líquido e Gasoso",0,11860,Desembarcados,"",0
+789418,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,ago,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,0,4,45,4,55,56,17180645,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,2378,Desembarcados,"",0
+789418,BRAM011,"POF 3","Terminal Aquaviário de Manaus",2016,ago,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Manaus",1,0,4,45,4,55,56,17180646,BRSSA,BRAM011,2710,"Granel Líquido e Gasoso",0,631,Desembarcados,"",0
+800213,BRRN001,GUAM-QB,"Terminal Aquaviário de Guamaré",2016,nov,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Guamaré",2,53,1,37,6,45,98,17545847,BRSE002,BRRN001,2710,"Granel Líquido e Gasoso",0,953,Desembarcados,"",0
+800213,BRRN001,GUAM-QB,"Terminal Aquaviário de Guamaré",2016,nov,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Guamaré",2,53,1,37,6,45,98,17545848,BR901,BRRN001,2710,"Granel Líquido e Gasoso",0,9847,Desembarcados,"",0
+805398,BRSE002,"Quadro de Bóias","Terminal Aquaviário de Aracaju",2016,nov,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Aracaju",1,97,1,17,3,22,120,17709432,BRSE002,BRAM011,2709,"Granel Líquido e Gasoso",0,17350,Embarcados,"",0
+782153,BRSUA,"Pier de Granéis Líquidos 3 - A",Suape,2016,jul,"Movimentação da Carga",Cabotagem,"Píer de Graneis Líquidos 3A",1,126,6,19,2,28,154,16971143,BR901,BRSUA,2709,"Granel Líquido e Gasoso",0,17513,Desembarcados,"",0
+805721,BRRN001,GUAM-QB,"Terminal Aquaviário de Guamaré",2016,dez,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Guamaré",2,3,1,17,1,20,24,17710028,BRRN001,BRBA003,2709,"Granel Líquido e Gasoso",0,17636,Embarcados,"",0
+834485,BRSSZ,"ALAMOA 1",Santos,2016,abr,"Movimentação da Carga",Cabotagem,"Cais Público - Alamoa",2,9,3,21,5,31,40,18772879,BRSSZ,BRVDC,2710,"Granel Líquido e Gasoso",0,14137,Embarcados,"",0
+762331,BRRIG,"Pier - Berço Sul","Rio Grande",2016,abr,"Movimentação da Carga",Cabotagem,"Píer Público",2,31,4,37,7,49,81,16379234,BRSSA,BRRIG,2710,"Granel Líquido e Gasoso",0,19712,Desembarcados,"",0
+762331,BRRIG,"Pier - Berço Sul","Rio Grande",2016,abr,"Movimentação da Carga",Cabotagem,"Píer Público",2,31,4,37,7,49,81,16379235,BRRIG,BRVDC,2710,"Granel Líquido e Gasoso",0,9026,Embarcados,"",0
+746535,BRBA003,PP-2,"Terminal Aquaviário de Madre de Deus",2016,jan,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Madre de Deus",1,16,5,30,8,44,61,16016646,BRBA003,BRSUA,2710,"Granel Líquido e Gasoso",0,25068,Embarcados,"",0
+769056,BRRIG,"Pier - Berço Sul","Rio Grande",2016,mai,"Movimentação da Carga",Cabotagem,"Píer Público",2,29,3,12,5,22,51,16606452,BRRIG,BRVDC,2710,"Granel Líquido e Gasoso",0,7017,Embarcados,"",0
+769056,BRRIG,"Pier - Berço Sul","Rio Grande",2016,mai,"Movimentação da Carga",Cabotagem,"Píer Público",2,29,3,12,5,22,51,16606453,n/a,n/a,9998,"Granel Líquido e Gasoso",0,800,"Não Informado","",0
+760759,BRBEL,BELM201,"Belém",2016,abr,"Movimentação da Carga",Cabotagem,"Terminal de Miramar",2,0,3,15,3,22,22,16352292,BRSSA,BRBEL,2710,"Granel Líquido e Gasoso",0,4881,Desembarcados,"",0
+791214,BRMCZ,"Berço 7","Maceió",2016,set,"Movimentação da Carga",Cabotagem,"Terminal de Granéis Líquidos",2,8,3,11,3,18,26,17211893,BRMCZ,BRSE002,2709,"Granel Líquido e Gasoso",0,7274,Embarcados,"",0
+773672,BRMCZ,"Berço 7","Maceió",2016,jun,"Movimentação da Carga",Cabotagem,"Terminal de Granéis Líquidos",1,50,4,11,3,19,69,16703778,BRMCZ,BRSUA,2709,"Granel Líquido e Gasoso",0,7878,Embarcados,"",0
+757481,BRBA003,PP-2,"Terminal Aquaviário de Madre de Deus",2016,mar,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Madre de Deus",1,55,3,30,4,38,93,16273947,BRBA003,BRRIG,2710,"Granel Líquido e Gasoso",0,27876,Embarcados,"",0
+747663,BRBA003,PP-2,"Terminal Aquaviário de Madre de Deus",2016,fev,"Movimentação da Carga",Cabotagem,"Terminal Aquaviário de Madre de Deus",1,72,18,52,3,74,147,16036822,BRBA003,BRIQI,2710,"Granel Líquido e Gasoso",0,25155,Embarcados,"",0
+835566,BRSSZ,"ALAMOA 2",Santos,2016,mai,"Movimentação da Carga",Cabotagem,"Cais Público - Alamoa",2,94,7,31,5,43,138,18834804,BRSSZ,BRVDC,2710,"Granel Líquido e Gasoso",0,20625,Embarcados,"",0
+738310,BRPA001,Externo,"Terminal Trombetas",2016,jan,"Movimentação da Carga","Longo Curso","Terminal Trombetas",1,16,7,25,0,33,50,15761644,BRPA001,IEAUG,2606,"Granel Sólido",0,53540,Embarcados,"",0
+735434,BRVDC,101,"Vila do Conde",2016,jan,"Movimentação da Carga",Cabotagem,"Terminal de Múltiplo Uso -1",2,0,1,59,25,86,86,15693622,BRPA001,BRVDC,2606,"Granel Sólido",0,52086,Desembarcados,"",0
+748221,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,12,0,12,12,16050664,BRSAL,BRARE,2501,"Granel Sólido",0,1426,Desembarcados,"",0
+736957,BRARE,T1,"Areia Branca",2016,jan,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,5,0,2,0,2,8,15863398,BRSAL,BRARE,2501,"Granel Sólido",0,839,Desembarcados,"",0
+746129,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,3,0,6,0,6,10,16013850,BRSAL,BRARE,2501,"Granel Sólido",0,1740,Desembarcados,"",0
+748579,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,4,0,4,4,16053025,BRSAL,BRARE,2501,"Granel Sólido",0,1327,Desembarcados,"",0
+748577,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,2,0,2,3,16053023,BRSAL,BRARE,2501,"Granel Sólido",0,716,Desembarcados,"",0
+785656,BRARE,T1,"Areia Branca",2016,set,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,33,0,6,0,6,40,17048325,BRSAL,BRARE,2501,"Granel Sólido",0,1732,Desembarcados,"",0
+748215,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,4,0,4,4,16050658,BRSAL,BRARE,2501,"Granel Sólido",0,1343,Desembarcados,"",0
+746081,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,2,0,3,0,3,5,16013798,BRSAL,BRARE,2501,"Granel Sólido",0,945,Desembarcados,"",0
+745587,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,2,0,3,0,3,5,16008100,BRSAL,BRARE,2501,"Granel Sólido",0,874,Desembarcados,"",0
+746077,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,5,0,5,0,5,10,16013794,BRSAL,BRARE,2501,"Granel Sólido",0,1516,Desembarcados,"",0
+745630,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,9,0,5,0,5,15,16008178,BRSAL,BRARE,2501,"Granel Sólido",0,1599,Desembarcados,"",0
+746087,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,6,0,4,0,4,11,16013804,BRSAL,BRARE,2501,"Granel Sólido",0,1431,Desembarcados,"",0
+745402,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,1,0,3,0,3,4,16006259,BRSAL,BRARE,2501,"Granel Sólido",0,807,Desembarcados,"",0
+800332,BRARE,T1,"Areia Branca",2016,nov,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,8,0,4,0,4,12,17550565,BRSAL,BRARE,2501,"Granel Sólido",0,685,Desembarcados,"",0
+799223,BRARE,T1,"Areia Branca",2016,nov,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,12,0,8,0,8,21,17552174,BRSAL,BRARE,2501,"Granel Sólido",0,769,Desembarcados,"",0
+794929,BRARE,T1,"Areia Branca",2016,out,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,1,0,3,0,4,5,17416528,BRSAL,BRARE,2501,"Granel Sólido",0,869,Desembarcados,"",0
+746084,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,3,0,3,3,16013801,BRSAL,BRARE,2501,"Granel Sólido",0,928,Desembarcados,"",0
+752732,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,1,0,56,0,56,58,16175994,BRSAL,BRARE,2501,"Granel Sólido",0,1435,Desembarcados,"",0
+806130,BRARE,"Cais Comercial","Areia Branca",2016,dez,Apoio,"Apoio Portuário","Cais Comercial de Atracação de Barcaças",1,1,2,4,0,6,8,17713176,BRSAL,BRARE,2501,"Granel Sólido",0,861,Desembarcados,"",0
+746112,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,4,0,2,0,2,7,16013834,BRSAL,BRARE,2501,"Granel Sólido",0,933,Desembarcados,"",0
+750866,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,4,0,4,4,16085362,BRSAL,BRARE,2501,"Granel Sólido",0,1501,Desembarcados,"",0
+751470,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,3,0,3,4,16116218,BRSAL,BRARE,2501,"Granel Sólido",0,994,Desembarcados,"",0
+750774,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,3,0,3,0,3,7,16075497,BRSAL,BRARE,2501,"Granel Sólido",0,1025,Desembarcados,"",0
+747458,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,3,0,4,4,16032285,BRSAL,BRARE,2501,"Granel Sólido",0,1070,Desembarcados,"",0
+748217,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,8,0,3,0,3,12,16050660,BRSAL,BRARE,2501,"Granel Sólido",0,869,Desembarcados,"",0
+748209,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,21,0,3,0,3,25,16050652,BRSAL,BRARE,2501,"Granel Sólido",0,926,Desembarcados,"",0
+748599,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,1,0,5,0,5,7,16053305,BRSAL,BRARE,2501,"Granel Sólido",0,1536,Desembarcados,"",0
+798345,BRARE,T1,"Areia Branca",2016,nov,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,34,0,9,0,9,44,17552173,BRSAL,BRARE,2501,"Granel Sólido",0,745,Desembarcados,"",0
+751839,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,5,0,5,5,16172037,BRSAL,BRARE,2501,"Granel Sólido",0,1556,Desembarcados,"",0
+785998,BRARE,T1,"Areia Branca",2016,set,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,18,0,17,0,17,36,17105290,BRSAL,BRARE,2501,"Granel Sólido",0,1694,Desembarcados,"",0
+748584,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,3,0,3,3,16053030,BRSAL,BRARE,2501,"Granel Sólido",0,868,Desembarcados,"",0
+795448,BRARE,T1,"Areia Branca",2016,out,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,3,0,21,21,17380323,BRSAL,BRARE,2501,"Granel Sólido",0,770,Desembarcados,"",0
+768854,BRARE,T1,"Areia Branca",2016,jun,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,2,0,3,3,16691143,BRSAL,BRARE,2501,"Granel Sólido",0,812,Desembarcados,"",0
+756661,BRARE,T1,"Areia Branca",2016,abr,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,1,0,4,0,4,6,16266480,BRSAL,BRARE,2501,"Granel Sólido",0,792,Desembarcados,"",0
+768853,BRARE,T1,"Areia Branca",2016,jun,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,4,0,4,4,16691142,BRSAL,BRARE,2501,"Granel Sólido",0,969,Desembarcados,"",0
+795384,BRARE,T1,"Areia Branca",2016,out,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,15,0,2,0,2,18,17380218,BRSAL,BRARE,2501,"Granel Sólido",0,851,Desembarcados,"",0
+798386,BRARE,T1,"Areia Branca",2016,nov,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,16,5,3,0,9,25,17552172,BRSAL,BRARE,2501,"Granel Sólido",0,758,Desembarcados,"",0
+803049,BRARE,"Cais Comercial","Areia Branca",2016,dez,Apoio,"Apoio Portuário","Cais Comercial de Atracação de Barcaças",1,10,0,1,0,1,12,17635449,BRSAL,BRARE,2501,"Granel Sólido",0,710,Desembarcados,"",0
+740852,BRARE,T1,"Areia Branca",2016,jan,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,6,0,5,0,5,11,15865959,BRSAL,BRARE,2501,"Granel Sólido",0,1519,Desembarcados,"",0
+785468,BRARE,T1,"Areia Branca",2016,set,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,3,0,4,4,17039217,BRSAL,BRARE,2501,"Granel Sólido",0,937,Desembarcados,"",0
+771145,BRARE,T1,"Areia Branca",2016,jun,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,9,0,18,0,18,28,16682290,BRSAL,BRARE,2501,"Granel Sólido",0,1673,Desembarcados,"",0
+779646,BRARE,T1,"Areia Branca",2016,ago,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,18,0,5,0,6,24,16897387,BRSAL,BRARE,2501,"Granel Sólido",0,919,Desembarcados,"",0
+747647,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,8,0,3,0,3,11,16036800,BRSAL,BRARE,2501,"Granel Sólido",0,945,Desembarcados,"",0
+785481,BRARE,T1,"Areia Branca",2016,set,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,6,0,41,0,41,47,17039230,BRSAL,BRARE,2501,"Granel Sólido",0,839,Desembarcados,"",0
+769320,BRARE,T1,"Areia Branca",2016,jun,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,16,0,2,0,2,18,16691101,BRSAL,BRARE,2501,"Granel Sólido",0,784,Desembarcados,"",0
+748204,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,4,0,4,5,16050647,BRSAL,BRARE,2501,"Granel Sólido",0,1469,Desembarcados,"",0
+795282,BRARE,T1,"Areia Branca",2016,out,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,6,0,4,0,5,11,17416534,BRSAL,BRARE,2501,"Granel Sólido",0,867,Desembarcados,"",0
+748208,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,5,0,5,5,16050651,BRSAL,BRARE,2501,"Granel Sólido",0,1601,Desembarcados,"",0
+747740,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,2,0,2,3,16037175,BRSAL,BRARE,2501,"Granel Sólido",0,824,Desembarcados,"",0
+803584,BRARE,"Cais Comercial","Areia Branca",2016,dez,Apoio,"Apoio Portuário","Cais Comercial de Atracação de Barcaças",1,21,0,4,0,4,26,17639130,BRSAL,BRARE,2501,"Granel Sólido",0,803,Desembarcados,"",0
+747712,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,5,0,5,5,16037138,BRSAL,BRARE,2501,"Granel Sólido",0,1627,Desembarcados,"",0
+748225,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,1,0,1,0,1,3,16050668,BRSAL,BRARE,2501,"Granel Sólido",0,707,Desembarcados,"",0
+786002,BRARE,T1,"Areia Branca",2016,set,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,30,0,4,0,5,35,17105294,BRSAL,BRARE,2501,"Granel Sólido",0,790,Desembarcados,"",0
+745644,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,8,0,2,0,3,11,16008195,BRSAL,BRARE,2501,"Granel Sólido",0,834,Desembarcados,"",0
+756662,BRARE,T1,"Areia Branca",2016,abr,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,2,0,5,0,6,8,16266481,BRSAL,BRARE,2501,"Granel Sólido",0,1915,Desembarcados,"",0
+751540,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,2,0,3,3,16116162,BRSAL,BRARE,2501,"Granel Sólido",0,1073,Desembarcados,"",0
+751554,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,3,0,3,4,16116181,BRSAL,BRARE,2501,"Granel Sólido",0,983,Desembarcados,"",0
+756222,BRARE,T1,"Areia Branca",2016,abr,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,14,0,5,0,5,20,16263033,BRSAL,BRARE,2501,"Granel Sólido",0,1602,Desembarcados,"",0
+753348,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,7,0,3,0,3,10,16179751,BRSAL,BRARE,2501,"Granel Sólido",0,861,Desembarcados,"",0
+753607,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,26,2,3,0,5,31,16183084,BRSAL,BRARE,2501,"Granel Sólido",0,950,Desembarcados,"",0
+753384,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,8,0,15,0,15,24,16179785,BRSAL,BRARE,2501,"Granel Sólido",0,1903,Desembarcados,"",0
+747341,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,28,0,2,0,2,31,16032048,BRSAL,BRARE,2501,"Granel Sólido",0,849,Desembarcados,"",0
+806008,BRARE,"Cais Comercial","Areia Branca",2016,dez,Apoio,"Apoio Portuário","Cais Comercial de Atracação de Barcaças",1,0,0,3,0,3,3,17712853,BRSAL,BRARE,2501,"Granel Sólido",0,774,Desembarcados,"",0
+753540,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,4,0,6,0,6,10,16183073,BRSAL,BRARE,2501,"Granel Sólido",0,1111,Desembarcados,"",0
+753603,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,6,0,6,6,16183082,BRSAL,BRARE,2501,"Granel Sólido",0,1615,Desembarcados,"",0
+797086,BRARE,T1,"Areia Branca",2016,nov,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,23,0,5,0,6,29,17400022,BRSAL,BRARE,2501,"Granel Sólido",0,658,Desembarcados,"",0
+753569,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,21,0,6,0,6,27,16183077,BRSAL,BRARE,2501,"Granel Sólido",0,1699,Desembarcados,"",0
+753976,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,3,0,2,0,2,5,16191403,BRSAL,BRARE,2501,"Granel Sólido",0,760,Desembarcados,"",0
+744741,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,3,0,2,0,2,6,15965962,BRSAL,BRARE,2501,"Granel Sólido",0,909,Desembarcados,"",0
+745408,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,2,0,2,2,16006266,BRSAL,BRARE,2501,"Granel Sólido",0,767,Desembarcados,"",0
+744744,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,1,0,5,0,5,6,15965965,BRSAL,BRARE,2501,"Granel Sólido",0,1692,Desembarcados,"",0
+745430,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,6,0,4,0,5,11,16006294,BRSAL,BRARE,2501,"Granel Sólido",0,1326,Desembarcados,"",0
+743215,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,3,0,3,0,4,8,15892497,BRSAL,BRARE,2501,"Granel Sólido",0,1263,Desembarcados,"",0
+744700,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,4,0,6,0,7,11,15965917,BRSAL,BRARE,2501,"Granel Sólido",0,1961,Desembarcados,"",0
+753864,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,5,0,5,5,16189850,BRSAL,BRARE,2501,"Granel Sólido",0,1735,Desembarcados,"",0
+751536,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,3,0,3,3,16116157,BRSAL,BRARE,2501,"Granel Sólido",0,885,Desembarcados,"",0
+744659,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,2,0,2,0,2,5,15965875,BRSAL,BRARE,2501,"Granel Sólido",0,739,Desembarcados,"",0
+744665,BRARE,T1,"Areia Branca",2016,fev,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,5,0,11,0,12,18,15965881,BRSAL,BRARE,2501,"Granel Sólido",0,887,Desembarcados,"",0
+753041,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,13,0,6,0,6,19,16176950,BRSAL,BRARE,2501,"Granel Sólido",0,1601,Desembarcados,"",0
+795633,BRARE,T1,"Areia Branca",2016,out,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,37,0,3,0,3,40,17383878,BRSAL,BRARE,2501,"Granel Sólido",0,775,Desembarcados,"",0
+753042,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,12,0,3,0,3,16,16176951,BRSAL,BRARE,2501,"Granel Sólido",0,885,Desembarcados,"",0
+751511,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,1,0,4,0,4,5,16116225,BRSAL,BRARE,2501,"Granel Sólido",0,1614,Desembarcados,"",0
+751564,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,5,0,5,5,16116191,BRSAL,BRARE,2501,"Granel Sólido",0,1583,Desembarcados,"",0
+751571,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,8,0,8,8,16116198,BRSAL,BRARE,2501,"Granel Sólido",0,1625,Desembarcados,"",0
+751567,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,3,0,3,4,16116194,BRRIG,BRARE,2501,"Granel Sólido",0,1084,Desembarcados,"",0
+751533,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,2,0,5,0,5,8,16116151,BRSAL,BRARE,2501,"Granel Sólido",0,1715,Desembarcados,"",0
+799837,BRARE,T1,"Areia Branca",2016,nov,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,1,0,10,0,10,12,17543086,BRSAL,BRARE,2501,"Granel Sólido",0,712,Desembarcados,"",0
+751581,BRARE,T1,"Areia Branca",2016,mar,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,4,0,4,4,16116211,BRSAL,BRARE,2501,"Granel Sólido",0,1515,Desembarcados,"",0
+757031,BRARE,T1,"Areia Branca",2016,abr,Apoio,"Apoio Portuário","Cais de Uso da CODERN",1,0,0,4,0,4,4,16270776,BRSAL,BRARE,2501,"Granel Sólido",0,964,Desembarcados,"",0
