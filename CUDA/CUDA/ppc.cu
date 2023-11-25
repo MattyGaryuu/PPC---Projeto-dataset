@@ -79,7 +79,6 @@ void CreateDictArchive() {
 //}
 
 void WriteCsv(int sum) {
-    printf("alo %s", h_dataset[0][0]);
     for (int i = 0; i < m_dataset.size(); i++) {
         wdataset << m_dataset[i][0];
         int index = 1, indext = 0;
